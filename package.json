@@ -39,6 +39,8 @@
 		"vitest": "^3.0.8"
 	},
 	"dependencies": {
+		"@webcontainer/api": "^1.5.3",
+		"readable-web-to-node-stream": "^5.0.0",
 		"vscode-jsonrpc": "^8.2.1"
 	}
 }
