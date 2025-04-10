@@ -1,8 +1,9 @@
 import type { MessageReaderOptions, MessageWriterOptions, ReadableStreamMessageReader, WriteableStreamMessageWriter, } from "vscode-jsonrpc";
 import { StreamMessageReader as _StreamMessageReader, StreamMessageWriter as _StreamMessageWriter } from "../node_modules/vscode-jsonrpc/lib/node/main";
 import { ReadableWebToNodeStream } from 'readable-web-to-node-stream';
+// @ts-ignore
+import { Writable } from "readable-stream";
 import type { WebContainerProcess } from "@webcontainer/api";
-import { Writable } from 'stream';
 
 export declare class StreamMessageWriterType extends WriteableStreamMessageWriter {
   constructor(writable: NodeJS.WritableStream, options?: ("ascii" | "utf-8") | MessageWriterOptions);
