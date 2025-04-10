@@ -2,7 +2,7 @@
 	"name": "@p-buddy/vscode-jsonrpc-node",
 	"type": "module",
 	"private": false,
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"main": "src/index.ts",
 	"publishConfig": {
 		"access": "public",
