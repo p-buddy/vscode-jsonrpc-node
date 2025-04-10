@@ -1,5 +1,5 @@
 {
-  "name": "...",
+  "name": "vscode-jsonrpc-node workspace",
   "dockerFile": "Dockerfile",
   "customizations": {
     "vscode": {
@@ -27,7 +27,7 @@
     "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,readonly"
   ],
   "containerEnv": {
-    "NPM_TOKEN": "${localEnv:..._NPM_TOKEN}",
+    "NPM_TOKEN": "${localEnv:PBUDDY_ALL_ACCESS_NPM_TOKEN}",
     "HOST_WORKSPACE_PATH": "${localWorkspaceFolder}",
     "GIT_USER_NAME": "${localEnv:GIT_USER_NAME}",
     "GIT_USER_EMAIL": "${localEnv:GIT_USER_EMAIL}"
