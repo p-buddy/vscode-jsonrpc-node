@@ -1,5 +1,5 @@
-import { StreamMessageReader as MessageReader, StreamMessageWriter as MessageWriter } from "vscode-jsonrpc/node";
+export { StreamMessageReader, StreamMessageWriter } from "vscode-jsonrpc/node";
 
-export class StreamMessageReader extends MessageReader { };
+const test = "test";
 
-export class StreamMessageWriter extends MessageWriter { };
+export { test };
