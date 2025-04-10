@@ -2,7 +2,7 @@ import type { MessageReaderOptions, MessageWriterOptions, ReadableStreamMessageR
 import { StreamMessageReader as _StreamMessageReader, StreamMessageWriter as _StreamMessageWriter } from "../node_modules/vscode-jsonrpc/lib/node/main";
 import { ReadableWebToNodeStream } from 'readable-web-to-node-stream';
 // @ts-ignore
-import { Writable } from "readable-stream";
+import { Writable } from "stream";
 import type { WebContainerProcess } from "@webcontainer/api";
 
 export declare class StreamMessageWriterType extends WriteableStreamMessageWriter {
@@ -14,6 +14,8 @@ export class StreamMessageReader extends _StreamMessageReader implements Readabl
     super(new ReadableWebToNodeStream(readable) as unknown as NodeJS.ReadableStream, encoding);
   }
 }
+
+type x = NodeJS.WritableStream;
 
 export class StreamMessageWriter extends _StreamMessageWriter implements WriteableStreamMessageWriter {
   constructor(writable: WebContainerProcess["input"], options?: ("ascii" | "utf-8") | MessageWriterOptions) {
