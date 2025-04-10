@@ -1,10 +1,10 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vitest/config';
 import dts from 'vite-plugin-dts';
-import { externalizeDeps } from 'vite-plugin-externalize-deps';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
-  plugins: [dts(), externalizeDeps({ except: ["vscode-jsonrpc/node"] })],
+  plugins: [dts(), nodePolyfills(),],
   build: {
     lib: {
       name: 'index',
