@@ -81,7 +81,6 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
         chunk = decoder.decode(chunk);
 
       console.log(typeof chunk);
-      chunk = decoder.decode(chunk);
 
       function done(error) {
         try {
