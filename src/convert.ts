@@ -20,7 +20,7 @@ const destroy = (...params) => {
 }
 
 const encoder = new TextEncoder();
-
+const decoder = new TextDecoder();
 // ADAPTED FROM: https://github.com/balena-io-modules/stream-adapters/blob/a5753108cc25ad60d7834cfe09f45d7e069314d4/lib/conversions.js#L127
 // AND: https://github.com/oven-sh/bun/blob/921874f0b37ef6fc75155fe7b3eea47f681fca3e/src/js/internal/webstreams_adapters.ts#L285
 export function newStreamWritableFromWritableStream(writableStream: WebContainerProcess["input"], options = {}) {
@@ -76,6 +76,12 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
           );
         }
       }
+
+      if (chunk instanceof Uint8Array)
+        chunk = decoder.decode(chunk);
+
+      console.log(typeof chunk);
+      chunk = decoder.decode(chunk);
 
       function done(error) {
         try {
