@@ -20,6 +20,9 @@ importers:
       readable-web-to-node-stream:
         specifier: ^5.0.0
         version: 5.0.0
+      setimmediate:
+        specifier: ^1.0.5
+        version: 1.0.5
       vscode-jsonrpc:
         specifier: ^8.2.1
         version: 8.2.1

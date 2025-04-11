@@ -1,3 +1,4 @@
+import "setimmediate";
 import type { MessageReaderOptions, MessageWriterOptions, ReadableStreamMessageReader, WriteableStreamMessageWriter, } from "vscode-jsonrpc";
 import { StreamMessageReader as _StreamMessageReader, StreamMessageWriter as _StreamMessageWriter } from "../node_modules/vscode-jsonrpc/lib/node/main";
 import { ReadableWebToNodeStream } from 'readable-web-to-node-stream';

@@ -42,6 +42,7 @@
 		"@webcontainer/api": "^1.5.3",
 		"readable-stream": "^4.7.0",
 		"readable-web-to-node-stream": "^5.0.0",
+		"setimmediate": "^1.0.5",
 		"vscode-jsonrpc": "^8.2.1"
 	}
 }
