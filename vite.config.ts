@@ -4,7 +4,7 @@ import dts from 'vite-plugin-dts';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
-  plugins: [dts(), nodePolyfills({ include: ['util', 'path', 'os', 'crypto', 'net', 'stream', 'vm'] }),],
+  plugins: [dts(), nodePolyfills({ include: ['util', 'path', 'os', 'crypto', 'net', 'vm'] }),],
   build: {
     lib: {
       name: 'index',
