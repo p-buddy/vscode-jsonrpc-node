@@ -64,7 +64,7 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
 
     write(chunk, encoding, callback) {
       console.log('write', chunk);
-      if (typeof chunk === 'string' && decodeStrings && !objectMode) {
+      if (false && typeof chunk === 'string' && decodeStrings && !objectMode) {
         if (encoding === "utf8" || encoding === "utf-8" || encoding === "ascii") {
           chunk = encoder.encode(chunk);
         } else {
