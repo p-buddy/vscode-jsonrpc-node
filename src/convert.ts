@@ -39,7 +39,7 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
         try {
           callback(error);
         } catch (error) {
-          setImmediate(() => destroy(writable, error));
+          Promise.resolve().then(() => destroy(writable, error));
         }
       }
 
@@ -80,7 +80,7 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
         try {
           callback(error);
         } catch (error) {
-          setImmediate(() => { throw error; });
+          Promise.resolve().then(() => { throw error; });
         }
       }
 
@@ -105,7 +105,7 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
         try {
           callback(error);
         } catch (error) {
-          setImmediate(() => destroy(writable, error));
+          Promise.resolve().then(() => destroy(writable, error));
         }
       }
 
