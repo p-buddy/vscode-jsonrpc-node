@@ -38,6 +38,7 @@
 		"vitest": "^3.0.8"
 	},
 	"dependencies": {
+		"@balena/stream-adapters": "1.0.0-dummy-branch-6bb8338bf74e9654f38eff8283913a7e97c89bf4",
 		"@webcontainer/api": "^1.5.3",
 		"readable-stream": "^4.7.0",
 		"readable-web-to-node-stream": "^5.0.0",

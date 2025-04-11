@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@balena/stream-adapters':
+        specifier: 1.0.0-dummy-branch-6bb8338bf74e9654f38eff8283913a7e97c89bf4
+        version: 1.0.0-dummy-branch-6bb8338bf74e9654f38eff8283913a7e97c89bf4(stream-browserify@3.0.0)(web-streams-polyfill@1.3.2)
       '@webcontainer/api':
         specifier: ^1.5.3
         version: 1.5.3
@@ -61,6 +64,12 @@ packages:
   '@babel/types@7.27.0':
     resolution: {integrity: sha512-H45s8fVLYjbhFH62dIJ3WtmJ6RSPt/3DRO0ZcT2SUiYiQyz3BLVb9ADEnLl91m74aQPS3AzzeajZHYOalWe3bg==}
     engines: {node: '>=6.9.0'}
+
+  '@balena/stream-adapters@1.0.0-dummy-branch-6bb8338bf74e9654f38eff8283913a7e97c89bf4':
+    resolution: {integrity: sha512-AO++sfNPqc55HBMWArfq5N9OeslW+SYqvgVcgeLsiHwJLAziRXk1bCBQwpfKHKAGQ/4xoGJxZ0yYqOgGTaCEfQ==}
+    peerDependencies:
+      stream-browserify: ^3.0.0
+      web-streams-polyfill: ^1.3.2
 
   '@esbuild/aix-ppc64@0.25.2':
     resolution: {integrity: sha512-wCIboOL2yXZym2cgm6mlA742s9QeJ8DjGVaL39dLN4rRwrOgOyYSnOaFPhKZGLb2ngj4EyfAFjsNJwPXZvseag==}
@@ -1321,6 +1330,9 @@ packages:
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
 
+  web-streams-polyfill@1.3.2:
+    resolution: {integrity: sha512-zU+H6o+0cRbwxHAA2rsHeZ3Cd9gPyWElxuPSKF/+o3vQcdoRa7fbONimwItgR8c48N4UHFcuimxLgAIamP0p4A==}
+
   which-typed-array@1.1.19:
     resolution: {integrity: sha512-rEvr90Bck4WZt9HHFC4DJMsjvu7x+r6bImz0/BrbWb7A2djJ8hnZMrWnHo9F8ssv0OMErasDhftrfROTyqSDrw==}
     engines: {node: '>= 0.4'}
@@ -1355,6 +1367,11 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
+
+  '@balena/stream-adapters@1.0.0-dummy-branch-6bb8338bf74e9654f38eff8283913a7e97c89bf4(stream-browserify@3.0.0)(web-streams-polyfill@1.3.2)':
+    dependencies:
+      stream-browserify: 3.0.0
+      web-streams-polyfill: 1.3.2
 
   '@esbuild/aix-ppc64@0.25.2':
     optional: true
@@ -2712,6 +2729,8 @@ snapshots:
   vscode-jsonrpc@8.2.1: {}
 
   vscode-uri@3.1.0: {}
+
+  web-streams-polyfill@1.3.2: {}
 
   which-typed-array@1.1.19:
     dependencies:
