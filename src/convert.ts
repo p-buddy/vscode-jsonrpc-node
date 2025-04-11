@@ -17,7 +17,6 @@ const destroy = (...params) => {
 
 // ADAPTED FROM: https://github.com/balena-io-modules/stream-adapters/blob/a5753108cc25ad60d7834cfe09f45d7e069314d4/lib/conversions.js#L127
 export function newStreamWritableFromWritableStream(writableStream: WebContainerProcess["input"], options = {}) {
-
   const {
     highWaterMark,
     decodeStrings = true,
@@ -40,6 +39,8 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
     signal,
 
     writev(chunks, callback) {
+      console.log('writev', chunks);
+
       function done(error) {
         try {
           callback(error);
@@ -58,7 +59,7 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
     },
 
     write(chunk, encoding, callback) {
-      console.log('write', chunk, encoding, callback);
+      console.log('write', chunk);
       if (typeof chunk === 'string' && decodeStrings && !objectMode) {
         chunk = Buffer.from(chunk, encoding);
         chunk = new Uint8Array(
@@ -91,15 +92,10 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
       }
 
       if (!closed) {
-        if (error != null) {
-          writer.abort(error).then(
-            done,
-            done);
-        } else {
-          writer.close().then(
-            done,
-            done);
-        }
+        if (error != null)
+          writer.abort(error).then(done, done);
+        else
+          writer.close().then(done, done);
         return;
       }
 
@@ -115,11 +111,7 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
         }
       }
 
-      if (!closed) {
-        writer.close().then(
-          done,
-          done);
-      }
+      if (!closed) writer.close().then(done, done);
     },
   });
 
@@ -136,5 +128,5 @@ export function newStreamWritableFromWritableStream(writableStream: WebContainer
       destroy(writable, error);
     });
 
-  return writable;
+  return writable as NodeJS.WritableStream;
 }
